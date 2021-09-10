@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="PlayFlockTest.View.CustomControls.UserInfoGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cc="clr-namespace:PlayFlockTest.View.CustomControls"
+             xmlns:local="clr-namespace:PlayFlockTest.View.CustomControls"
+             mc:Ignorable="d"
+             x:Name="root">
+    <UserControl.Resources>
+        <Style x:Key="AddButtonStyle">
+            <Setter Property="Button.Margin" Value="5,5,5,5"/>
+            <Setter Property="Button.Background" Value="LightGreen"/>
+            <Setter Property="Button.BorderBrush" Value="Green"/>
+            <Setter Property="Button.BorderThickness" Value="0.5"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Button Content="Add" Command="{Binding AddCommand, ElementName=root}" Style="{StaticResource AddButtonStyle}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Orientation="Vertical" x:Name="MainStackPanel">
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

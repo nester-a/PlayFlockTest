@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="PlayFlockTest.View.CustomControls.UnitInfoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlayFlockTest.View.CustomControls"
+             xmlns:cc="clr-namespace:PlayFlockTest.View.Converters"
+             mc:Ignorable="d"
+             x:Name="root">
+    <UserControl.Resources>
+        <cc:ClassConverter x:Key="classConverter"/>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Width" Value="65"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Label Content="{Binding RootUnitId, ElementName=root}" FontSize="12" Margin="5,0,5,0" Width="65" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Right" Style="{x:Null}"/>
+            <Label Content="{Binding RootUnitHp, ElementName=root}" BorderBrush="DarkRed" Background="Red"/>
+            <Label Content="{Binding RootUnitMana, ElementName=root}" BorderBrush="Blue" Background="LightBlue"/>
+            <Label Content="{Binding RootUnitClass, ElementName=root, Converter={StaticResource classConverter}}" BorderBrush="DarkViolet" Background="Violet"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

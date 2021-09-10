@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PlayFlockTest.View.CustomControls.EditRemoveControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlayFlockTest.View.CustomControls"
+             mc:Ignorable="d" 
+             x:Name="root">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Width" Value="65"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel x:Name="buttonsStackPanel" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="EDIT" x:Name="editButton" Command="{Binding EditButtonCommand, ElementName=root}" BorderBrush="DarkOrange" Background="Orange" Click="editButton_Click"/>
+            <Button Content="REMOVE" x:Name="removeButton" Command="{Binding RemoveButtonCommand, ElementName=root}" BorderBrush="DarkRed" Background="Red" Click="removeButton_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

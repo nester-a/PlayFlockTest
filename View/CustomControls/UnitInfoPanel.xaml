@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="PlayFlockTest.View.CustomControls.UnitInfoPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlayFlockTest.View.CustomControls"
+             mc:Ignorable="d" 
+             x:Name="root">
+    <Border BorderBrush="Black" BorderThickness="0.5">
+        <Grid Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                <local:UnitInfoControl RootUnitId="{Binding ElementName=root,Path=RootUnit.Id}" RootUnitHp="{Binding ElementName=root,Path=RootUnit.Hp}" RootUnitMana="{Binding ElementName=root,Path=RootUnit.Mana}" RootUnitClass="{Binding ElementName=root,Path=RootUnit.Class}"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <local:EditRemoveControl EditButtonCommand="{Binding ElementName=root,Path=EditButtonCommand}" RemoveButtonCommand="{Binding ElementName=root,Path=RemoveButtonCommand}" EditClick="EditRemoveControl_EditClick" RemoveClick="EditRemoveControl_RemoveClick"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
