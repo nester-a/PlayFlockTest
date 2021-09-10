@@ -133,7 +133,6 @@ namespace PlayFlockTest.View.CustomControls
                 }
             }
         }
-
         private ICommand _editCommand;
         public ICommand EditCommand
         {
@@ -181,6 +180,8 @@ namespace PlayFlockTest.View.CustomControls
                         editWindow.ShowDialog();
                         if (editWindow.DialogResult == true)
                         {
+                            NewUnit = (Unit)editWindow.RootUnit.Clone();
+                            NewUnit.Id = UnitsSource.Count + 1;
                             UnitsSource.Add(NewUnit);
                         }
                     });
